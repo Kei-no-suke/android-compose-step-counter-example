@@ -107,7 +107,8 @@ class StepCounterService: Service(), SensorEventListener {
                                         steps = currentLogs[0].hourTotalStepCounts,
                                         date = currentLogs[0].beginDay,
                                         beginHour = longToLocalDateTime(currentLogs[0].beginHour).hour,
-                                        endHour = longToLocalDateTime(currentLogs[0].beginHour).hour + 1
+                                        endHour =
+                                            (longToLocalDateTime(currentLogs[0].beginHour).hour + 1) % 24
                                     )
                                 )
                             }
@@ -215,7 +216,8 @@ class StepCounterService: Service(), SensorEventListener {
                                         steps = currentLogs[0].hourTotalStepCounts,
                                         date = currentLogs[0].beginDay,
                                         beginHour = longToLocalDateTime(currentLogs[0].beginHour).hour,
-                                        endHour = longToLocalDateTime(currentLogs[0].beginHour).hour + 1
+                                        endHour =
+                                            (longToLocalDateTime(currentLogs[0].beginHour).hour + 1) % 24
                                     )
                                 )
                             }
